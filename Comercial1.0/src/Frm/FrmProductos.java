@@ -24,7 +24,7 @@ import javax.swing.KeyStroke;
  * @author ittov
  */
 public class FrmProductos extends javax.swing.JFrame {
-   public static String producto,precio,id,precioventa,inventario;
+   public static String producto,precio,id,precioventa,inventario,serie;
     /**
      * Creates new form FrmProductos
      */
@@ -74,7 +74,7 @@ public class FrmProductos extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 200, 50));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 200, 50));
 
         txtBuscadorserie.setFont(new java.awt.Font("Century Schoolbook", 0, 14)); // NOI18N
         txtBuscadorserie.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -82,7 +82,7 @@ public class FrmProductos extends javax.swing.JFrame {
                 txtBuscadorserieKeyReleased(evt);
             }
         });
-        jPanel1.add(txtBuscadorserie, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 410, -1));
+        jPanel1.add(txtBuscadorserie, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 590, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
@@ -97,7 +97,7 @@ public class FrmProductos extends javax.swing.JFrame {
                 btnSeleccionarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 200, 50));
+        jPanel1.add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 200, 50));
 
         tblproductos.setBackground(new java.awt.Color(11, 55, 68));
         tblproductos.setFont(new java.awt.Font("Century Schoolbook", 0, 14)); // NOI18N
@@ -115,6 +115,7 @@ public class FrmProductos extends javax.swing.JFrame {
         ));
         tblproductos.setGridColor(new java.awt.Color(255, 255, 255));
         tblproductos.setInheritsPopupMenu(true);
+        tblproductos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblproductos.getTableHeader().setResizingAllowed(false);
         tblproductos.getTableHeader().setReorderingAllowed(false);
         tblproductos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,14 +130,14 @@ public class FrmProductos extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblproductos);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 820, 260));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 1030, 260));
 
         jLabel3.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Serie");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 50, -1, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 840, 530));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1050, 580));
 
         pnbarra.setBackground(new java.awt.Color(255, 166, 33));
         pnbarra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -157,13 +158,13 @@ public class FrmProductos extends javax.swing.JFrame {
         jLabel2.setText("Producto");
         pnbarra.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        getContentPane().add(pnbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 30));
+        getContentPane().add(pnbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 30));
 
         lblFondo.setBackground(new java.awt.Color(153, 153, 153));
         lblFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblFondo.setMaximumSize(new java.awt.Dimension(1111, 800));
         lblFondo.setOpaque(true);
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 560));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -188,6 +189,7 @@ int xx,yy;
        precio = String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 5));
        precioventa= String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 3));
        inventario =String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 9));
+       serie = String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 2));
        
        int inv = Integer.parseInt(inventario);
        if(inv> 0 ){
@@ -284,7 +286,7 @@ tblproductos.setModel(bc);
 th.setFont(fuente); 
 tblproductos.getColumnModel().getColumn(1).setPreferredWidth(150);
 tblproductos.getColumnModel().getColumn(7).setPreferredWidth(200);
-//tblproductos.removeColumn(tblproductos.getColumnModel().getColumn(0));
+tblproductos.removeColumn(tblproductos.getColumnModel().getColumn(0));
 //tblproductos.removeColumn(tblproductos.getColumnModel().getColumn(2));
 //tblproductos.removeColumn(tblproductos.getColumnModel().getColumn(2));
     }

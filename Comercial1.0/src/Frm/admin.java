@@ -5,17 +5,21 @@
  */
 package Frm;
 
+import Animacion.Animacion;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ittov
  */
 public class admin extends javax.swing.JFrame {
-
+ 
     /**
      * Creates new form admin
      */
     public admin() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -27,22 +31,882 @@ public class admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        PnHome = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        PnCliente = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
+        PnProveedores = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel10 = new javax.swing.JPanel();
+        PnMarcas = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jPanel11 = new javax.swing.JPanel();
+        PnCompras = new javax.swing.JPanel();
+        PnUsuarios = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jPanel12 = new javax.swing.JPanel();
+        PnEmpleados = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jPanel13 = new javax.swing.JPanel();
+        PnReportes = new javax.swing.JPanel();
+        PnProductos = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jPanel14 = new javax.swing.JPanel();
+        PnBarra = new javax.swing.JPanel();
+        btnCerrar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
+        PnMenu = new javax.swing.JPanel();
+        BtnCerrar = new javax.swing.JButton();
+        BtnCliente = new javax.swing.JButton();
+        BntProductos = new javax.swing.JButton();
+        BtnMarcas = new javax.swing.JButton();
+        BntProveedor = new javax.swing.JButton();
+        BntUsuario = new javax.swing.JButton();
+        BtnHome = new javax.swing.JButton();
+        BtnReportes = new javax.swing.JButton();
+        BtnCompras = new javax.swing.JButton();
+        BtnEmpleados = new javax.swing.JButton();
+        lblSeleccion = new javax.swing.JLabel();
+        lblSeleccion1 = new javax.swing.JLabel();
+        lblSeleccion2 = new javax.swing.JLabel();
+        lblSeleccion3 = new javax.swing.JLabel();
+        lblSeleccion4 = new javax.swing.JLabel();
+        lblSeleccion5 = new javax.swing.JLabel();
+        lblSeleccion6 = new javax.swing.JLabel();
+        lblSeleccion7 = new javax.swing.JLabel();
+        lblSeleccion8 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1380, 770));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1380, 770));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PnHome.setOpaque(false);
+        PnHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 180, 130));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 180, 130));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 180, 130));
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 180, 130));
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        PnHome.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 390, 300));
+
+        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 390, 310));
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 380, 300));
+
+        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+
+        PnHome.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 380, 310));
+
+        getContentPane().add(PnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 760));
+
+        PnCliente.setOpaque(false);
+        PnCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        PnCliente.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+
+        jPanel9.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+
+        PnCliente.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+
+        getContentPane().add(PnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnProveedores.setOpaque(false);
+        PnProveedores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        PnProveedores.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+
+        jPanel10.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+
+        PnProveedores.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+
+        getContentPane().add(PnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnMarcas.setOpaque(false);
+        PnMarcas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        PnMarcas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+
+        jPanel11.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+
+        PnMarcas.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+
+        getContentPane().add(PnMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnCompras.setOpaque(false);
+
+        javax.swing.GroupLayout PnComprasLayout = new javax.swing.GroupLayout(PnCompras);
+        PnCompras.setLayout(PnComprasLayout);
+        PnComprasLayout.setHorizontalGroup(
+            PnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1100, Short.MAX_VALUE)
+        );
+        PnComprasLayout.setVerticalGroup(
+            PnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnUsuarios.setOpaque(false);
+        PnUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        PnUsuarios.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+
+        jPanel12.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+
+        PnUsuarios.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+
+        getContentPane().add(PnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnEmpleados.setOpaque(false);
+        PnEmpleados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        PnEmpleados.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+
+        jPanel13.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+
+        PnEmpleados.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+
+        getContentPane().add(PnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnReportes.setOpaque(false);
+
+        javax.swing.GroupLayout PnReportesLayout = new javax.swing.GroupLayout(PnReportes);
+        PnReportes.setLayout(PnReportesLayout);
+        PnReportesLayout.setHorizontalGroup(
+            PnReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1100, Short.MAX_VALUE)
+        );
+        PnReportesLayout.setVerticalGroup(
+            PnReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnProductos.setOpaque(false);
+        PnProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable6);
+
+        PnProductos.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+
+        jPanel14.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+
+        PnProductos.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+
+        getContentPane().add(PnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
+
+        PnBarra.setBackground(new java.awt.Color(204, 153, 0));
+        PnBarra.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        PnBarra.setForeground(new java.awt.Color(0, 38, 34));
+        PnBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar.png"))); // NOI18N
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.setDisabledIcon(null);
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar1.png"))); // NOI18N
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+        PnBarra.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 0, 70, 48));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/minimizar.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/minimizar1.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        PnBarra.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 0, 46, 50));
+
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-de-menu-de-tres-lineas-horizontales.png"))); // NOI18N
+        btnMenu.setBorderPainted(false);
+        btnMenu.setContentAreaFilled(false);
+        btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-de-menu-de-tres-lineas-horizontales1.png"))); // NOI18N
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+        PnBarra.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 50));
+
+        getContentPane().add(PnBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 50));
+
+        PnMenu.setBackground(new java.awt.Color(52, 52, 52));
+        PnMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        PnMenu.setForeground(new java.awt.Color(255, 166, 33));
+        PnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PnMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BtnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesionblanco.png"))); // NOI18N
+        BtnCerrar.setBorderPainted(false);
+        BtnCerrar.setContentAreaFilled(false);
+        BtnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion gris.png"))); // NOI18N
+        BtnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCerrarActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 270, 70));
+
+        BtnCliente.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BtnCliente.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCliente.setText("Clientes");
+        BtnCliente.setBorderPainted(false);
+        BtnCliente.setContentAreaFilled(false);
+        BtnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnClienteActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 50));
+
+        BntProductos.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BntProductos.setForeground(new java.awt.Color(255, 255, 255));
+        BntProductos.setText("Productos");
+        BntProductos.setBorderPainted(false);
+        BntProductos.setContentAreaFilled(false);
+        BntProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BntProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BntProductosActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BntProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, 50));
+
+        BtnMarcas.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BtnMarcas.setForeground(new java.awt.Color(255, 255, 255));
+        BtnMarcas.setText("Marcas");
+        BtnMarcas.setBorderPainted(false);
+        BtnMarcas.setContentAreaFilled(false);
+        BtnMarcas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnMarcas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMarcasActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, 50));
+
+        BntProveedor.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BntProveedor.setForeground(new java.awt.Color(255, 255, 255));
+        BntProveedor.setText("Proveedores");
+        BntProveedor.setBorderPainted(false);
+        BntProveedor.setContentAreaFilled(false);
+        BntProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BntProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BntProveedorActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BntProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, 50));
+
+        BntUsuario.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BntUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        BntUsuario.setText("Usuario");
+        BntUsuario.setBorderPainted(false);
+        BntUsuario.setContentAreaFilled(false);
+        BntUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BntUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BntUsuarioActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BntUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 280, 50));
+
+        BtnHome.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BtnHome.setForeground(new java.awt.Color(255, 255, 255));
+        BtnHome.setText("Home");
+        BtnHome.setBorderPainted(false);
+        BtnHome.setContentAreaFilled(false);
+        BtnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHomeActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 50));
+
+        BtnReportes.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BtnReportes.setForeground(new java.awt.Color(255, 255, 255));
+        BtnReportes.setText("Reportes");
+        BtnReportes.setBorderPainted(false);
+        BtnReportes.setContentAreaFilled(false);
+        BtnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnReportesActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 280, 50));
+
+        BtnCompras.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BtnCompras.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCompras.setText("Compra");
+        BtnCompras.setBorderPainted(false);
+        BtnCompras.setContentAreaFilled(false);
+        BtnCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnComprasActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 280, 50));
+
+        BtnEmpleados.setFont(new java.awt.Font("Century Schoolbook", 0, 30)); // NOI18N
+        BtnEmpleados.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEmpleados.setText("Empleado");
+        BtnEmpleados.setBorderPainted(false);
+        BtnEmpleados.setContentAreaFilled(false);
+        BtnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEmpleadosActionPerformed(evt);
+            }
+        });
+        PnMenu.add(BtnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 280, 50));
+
+        lblSeleccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, 40));
+
+        lblSeleccion1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 40));
+
+        lblSeleccion2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, 40));
+
+        lblSeleccion3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, 40));
+
+        lblSeleccion4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, 40));
+
+        lblSeleccion5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, 40));
+
+        lblSeleccion6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, 40));
+
+        lblSeleccion7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, -1, 40));
+
+        lblSeleccion8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        PnMenu.add(lblSeleccion8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, -1, 40));
+
+        getContentPane().add(PnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 280, 720));
+
+        lblFondo.setBackground(new java.awt.Color(102, 102, 102));
+        lblFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblFondo.setMaximumSize(new java.awt.Dimension(1111, 800));
+        lblFondo.setOpaque(true);
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1380, 820));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        Animacion an = new Animacion();
+        int x = PnMenu.getX();
+        if(x == 0){
+            an.mover_izquierda(0, -180, 10, 5, PnMenu);
+
+        }
+        else{
+            an.mover_derecha(-180, 0, 5, 2, PnMenu);
+        }
+
+    }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void BtnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCerrarActionPerformed
+
+        int respuesta;
+        respuesta = JOptionPane.showConfirmDialog(null, "Desea Cerrar Sesión?","Cerrar Sesión",0);
+        if(respuesta == 0){
+            Login lg= new Login();
+            lg.setVisible(true);
+            this.dispose();
+        }
+        else{}
+    }//GEN-LAST:event_BtnCerrarActionPerformed
+
+    private void BtnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnComprasActionPerformed
+       PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(true);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(true);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);
+    }//GEN-LAST:event_BtnComprasActionPerformed
+
+    private void BtnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReportesActionPerformed
+PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(true);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnReportesActionPerformed
+
+    private void BtnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHomeActionPerformed
+        inicio();
+        
+    }//GEN-LAST:event_BtnHomeActionPerformed
+
+    private void BtnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClienteActionPerformed
+       PnHome.setVisible(false);
+       PnCliente.setVisible(true);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(true);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);
+    }//GEN-LAST:event_BtnClienteActionPerformed
+
+    private void BntProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntProductosActionPerformed
+        PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(true);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(true);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);
+    }//GEN-LAST:event_BntProductosActionPerformed
+
+    private void BtnMarcasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMarcasActionPerformed
+        PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(true);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(true);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);
+    }//GEN-LAST:event_BtnMarcasActionPerformed
+
+    private void BntProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntProveedorActionPerformed
+PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(true);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(true);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);        
+    }//GEN-LAST:event_BntProveedorActionPerformed
+
+    private void BntUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BntUsuarioActionPerformed
+       PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(true);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(true);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);
+    }//GEN-LAST:event_BntUsuarioActionPerformed
+
+    private void BtnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEmpleadosActionPerformed
+PnHome.setVisible(false);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(true);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(false);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(true);
+        lblSeleccion8.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEmpleadosActionPerformed
+
+    
+     void inicio(){
+PnHome.setVisible(true);
+       PnCliente.setVisible(false);
+       PnCompras.setVisible(false);
+       PnEmpleados.setVisible(false);
+       PnMarcas.setVisible(false);
+       PnProductos.setVisible(false);
+       PnProveedores.setVisible(false);
+       PnReportes.setVisible(false);
+       PnUsuarios.setVisible(false);
+        lblSeleccion.setVisible(true);
+        lblSeleccion1.setVisible(false);
+        lblSeleccion2.setVisible(false);
+        lblSeleccion3.setVisible(false);
+        lblSeleccion4.setVisible(false);
+        lblSeleccion5.setVisible(false);
+        lblSeleccion6.setVisible(false);
+        lblSeleccion7.setVisible(false);
+        lblSeleccion8.setVisible(false);
+}
     /**
      * @param args the command line arguments
      */
@@ -79,5 +943,65 @@ public class admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BntProductos;
+    private javax.swing.JButton BntProveedor;
+    private javax.swing.JButton BntUsuario;
+    private javax.swing.JButton BtnCerrar;
+    private javax.swing.JButton BtnCliente;
+    private javax.swing.JButton BtnCompras;
+    private javax.swing.JButton BtnEmpleados;
+    private javax.swing.JButton BtnHome;
+    private javax.swing.JButton BtnMarcas;
+    private javax.swing.JButton BtnReportes;
+    private javax.swing.JPanel PnBarra;
+    private javax.swing.JPanel PnCliente;
+    private javax.swing.JPanel PnCompras;
+    private javax.swing.JPanel PnEmpleados;
+    private javax.swing.JPanel PnHome;
+    private javax.swing.JPanel PnMarcas;
+    private javax.swing.JPanel PnMenu;
+    private javax.swing.JPanel PnProductos;
+    private javax.swing.JPanel PnProveedores;
+    private javax.swing.JPanel PnReportes;
+    private javax.swing.JPanel PnUsuarios;
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnMenu;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblSeleccion;
+    private javax.swing.JLabel lblSeleccion1;
+    private javax.swing.JLabel lblSeleccion2;
+    private javax.swing.JLabel lblSeleccion3;
+    private javax.swing.JLabel lblSeleccion4;
+    private javax.swing.JLabel lblSeleccion5;
+    private javax.swing.JLabel lblSeleccion6;
+    private javax.swing.JLabel lblSeleccion7;
+    private javax.swing.JLabel lblSeleccion8;
     // End of variables declaration//GEN-END:variables
 }

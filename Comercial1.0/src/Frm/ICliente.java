@@ -238,11 +238,11 @@ public class ICliente extends javax.swing.JFrame {
  guardar(); 
    }
             else{
-            JOptionPane.showMessageDialog(null, "Ingrese un telefono correcto, Formato ejemplo: 11111111 o 1111-1111");
+            JOptionPane.showMessageDialog(null, "Ingrese un telefono correcto, Formato ejemplo: 12345678 o 1234-5678");
             } 
         }
         else{
-            JOptionPane.showMessageDialog(null, "Ingrese un Dui correcto ");
+            JOptionPane.showMessageDialog(null, "Ingrese un Dui correcto Formato ejemplo: 12345678kñ79jm-1 ");
         }
         }
         else{
