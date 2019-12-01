@@ -3,7 +3,7 @@ package Entidades;
 
 public class Empleado {
  int  ID_empleado,edad;
- String empleado,telefono,direccion;
+ String empleado,telefono,direccion,estado;
 
     public int getID_empleado() {
         return ID_empleado;
@@ -44,6 +44,16 @@ public class Empleado {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+   
  
  
 }

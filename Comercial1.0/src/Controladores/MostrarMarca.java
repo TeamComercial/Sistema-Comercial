@@ -2,7 +2,6 @@
 package Controladores;
 
 import BaseDatos.Conexion;
-import Entidades.Clientes;
 import Entidades.Marca;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -52,9 +51,7 @@ public class MostrarMarca {
         public void EliminarMarca(Marca marca){
         try {    
             CallableStatement statement = con.prepareCall("{call SP_EMarca(?)}");
-            
             statement.setInt("id", marca.getId_marca());
-            
         statement.execute();
         JOptionPane.showMessageDialog(null, "Elimino Exitoso!!", "Mensaje de sistema", 1);
             
