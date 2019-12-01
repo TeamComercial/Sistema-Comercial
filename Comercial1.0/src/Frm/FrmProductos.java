@@ -24,7 +24,7 @@ import javax.swing.KeyStroke;
  * @author ittov
  */
 public class FrmProductos extends javax.swing.JFrame {
-   public static String producto,precio,id,precioventa,inventario,serie;
+   public static String producto,precio,id,precioventa,inventario,serie,idp;
     /**
      * Creates new form FrmProductos
      */
@@ -124,8 +124,8 @@ public class FrmProductos extends javax.swing.JFrame {
             }
         });
         tblproductos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tblproductosKeyReleased(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblproductosKeyPressed(evt);
             }
         });
         jScrollPane2.setViewportView(tblproductos);
@@ -184,7 +184,7 @@ int xx,yy;
    void seleccionar(){
        int fila = tblproductos.getSelectedRow();
        if(fila >=0){
-        String id = String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 0));
+        idp = String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 0));
       producto= String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 1));
        precio = String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 5));
        precioventa= String.valueOf(tblproductos.getModel().getValueAt(tblproductos.getSelectedRow(), 3));
@@ -222,12 +222,12 @@ int xx,yy;
        }
     }//GEN-LAST:event_tblproductosMouseClicked
 
-    private void tblproductosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblproductosKeyReleased
-        tblproductos.getInputMap(tblproductos.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0,false), "selectColumnCell");
+    private void tblproductosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblproductosKeyPressed
+         tblproductos.getInputMap(tblproductos.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0,false), "selectColumnCell");
         if(evt.getKeyCode()== KeyEvent.VK_ENTER){
             seleccionar();
        }
-    }//GEN-LAST:event_tblproductosKeyReleased
+    }//GEN-LAST:event_tblproductosKeyPressed
      Producto p = new Producto(); public void buscar(){
      String Titulo[]={"ID","Producto","Serie","Costo","Margen","Precio","Marca","Descripcion","Proveedor","Inventario"};
 DefaultTableModel bc = new DefaultTableModel(null, Titulo){

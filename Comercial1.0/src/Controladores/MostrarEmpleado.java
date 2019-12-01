@@ -4,7 +4,9 @@ import BaseDatos.Conexion;
 import Entidades.Empleado;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -35,6 +37,18 @@ public class MostrarEmpleado {
      
      return Empleados;
      }
-   
+   public int countEmpleados(){
+   int count =0;
+       try {
+       PreparedStatement pr =con.prepareStatement("select count(*) from empleado");
+       ResultSet rs =  pr.executeQuery();
+       if(rs.next()){
+       count = rs.getInt(1);
+       }
+     } catch (Exception e) {
+         JOptionPane.showMessageDialog(null, "Error!!  " + e, "Mensaje de sistema", 1 );
+       }
+   return count;
+   }
 }
 

@@ -16,7 +16,7 @@ import javax.swing.table.JTableHeader;
  * @author ittov
  */
 public class Tpersona extends javax.swing.JFrame {
- public static String cliente,direccion,dui;
+ public static String cliente,direccion,dui,id2;
     /**
      * Creates new form Tpersona
      */
@@ -82,8 +82,8 @@ public class Tpersona extends javax.swing.JFrame {
             }
         });
         tblCliente.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tblClienteKeyReleased(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblClienteKeyPressed(evt);
             }
         });
         jScrollPane1.setViewportView(tblCliente);
@@ -168,7 +168,7 @@ public class Tpersona extends javax.swing.JFrame {
     void seleccionar(){
  int fila = tblCliente.getSelectedRow();
  if(fila>=0){
-        String id = String.valueOf(tblCliente.getModel().getValueAt(tblCliente.getSelectedRow(), 0));
+       id2 = String.valueOf(tblCliente.getModel().getValueAt(tblCliente.getSelectedRow(), 0));
        cliente = String.valueOf(tblCliente.getModel().getValueAt(tblCliente.getSelectedRow(), 1));
        direccion = String.valueOf(tblCliente.getModel().getValueAt(tblCliente.getSelectedRow(), 5));
        dui = String.valueOf(tblCliente.getModel().getValueAt(tblCliente.getSelectedRow(), 2));
@@ -230,19 +230,17 @@ tblCliente.setModel(bc);
         buscar();
     }//GEN-LAST:event_txtBuscadorKeyReleased
 
-    private void tblClienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblClienteKeyReleased
-       tblCliente.getInputMap(tblCliente.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0,false), "selectColumnCell");
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
-            seleccionar();
-       }
-        
-    }//GEN-LAST:event_tblClienteKeyReleased
-
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClienteMouseClicked
       if(evt.getClickCount()==2){
          seleccionar();
        }
     }//GEN-LAST:event_tblClienteMouseClicked
+
+    private void tblClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblClienteKeyPressed
+       tblCliente.getInputMap(tblCliente.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0,false), "selectColumnCell");
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            seleccionar();}
+    }//GEN-LAST:event_tblClienteKeyPressed
 
     
     public static void tabla(){

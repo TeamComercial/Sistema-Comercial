@@ -6,20 +6,29 @@
 package Frm;
 
 import Animacion.Animacion;
+import Controladores.MostrarMarca;
+import Entidades.Marca;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ittov
  */
 public class admin extends javax.swing.JFrame {
- 
+ int editado = 0 ;
+ String id1;
     /**
      * Creates new form admin
      */
     public admin() {
         initComponents();
         inicio();
+        MostrarDatosMarcas();
+    
     }
 
     /**
@@ -50,8 +59,17 @@ public class admin extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         PnMarcas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblMarca = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtMarca = new javax.swing.JTextField();
+        BtnGuardarM = new javax.swing.JButton();
+        txtbuscarmarca = new javax.swing.JTextField();
+        BtnLimpiarM = new javax.swing.JButton();
+        BtnDefazarM = new javax.swing.JButton();
+        BtnEditarM = new javax.swing.JButton();
+        BtnEliminarM = new javax.swing.JButton();
         PnCompras = new javax.swing.JPanel();
         PnUsuarios = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -94,7 +112,6 @@ public class admin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1380, 770));
         setResizable(false);
         setSize(new java.awt.Dimension(1380, 770));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -297,7 +314,7 @@ public class admin extends javax.swing.JFrame {
         PnMarcas.setOpaque(false);
         PnMarcas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblMarca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -308,24 +325,84 @@ public class admin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        tblMarca.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblMarca.getTableHeader().setResizingAllowed(false);
+        tblMarca.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(tblMarca);
 
-        PnMarcas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 109, 740, -1));
+        PnMarcas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 580, -1));
 
         jPanel11.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1060, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Marca");
+        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 53, 91, 23));
+
+        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Nombre:");
+        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        jPanel11.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 150, -1));
+
+        BtnGuardarM.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        BtnGuardarM.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarM.setText("Guardar");
+        BtnGuardarM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BtnGuardarM.setContentAreaFilled(false);
+        BtnGuardarM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnGuardarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarMActionPerformed(evt);
+            }
+        });
+        jPanel11.add(BtnGuardarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, 130, 60));
 
         PnMarcas.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 280, 1060));
+        PnMarcas.add(txtbuscarmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 410, 30));
+
+        BtnLimpiarM.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        BtnLimpiarM.setForeground(new java.awt.Color(255, 255, 255));
+        BtnLimpiarM.setText("Limpiar");
+        BtnLimpiarM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BtnLimpiarM.setContentAreaFilled(false);
+        BtnLimpiarM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PnMarcas.add(BtnLimpiarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 130, 60));
+
+        BtnDefazarM.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        BtnDefazarM.setForeground(new java.awt.Color(255, 255, 255));
+        BtnDefazarM.setText("Defazar");
+        BtnDefazarM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BtnDefazarM.setContentAreaFilled(false);
+        BtnDefazarM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PnMarcas.add(BtnDefazarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 580, 130, 60));
+
+        BtnEditarM.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        BtnEditarM.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEditarM.setText("Editar");
+        BtnEditarM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BtnEditarM.setContentAreaFilled(false);
+        BtnEditarM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEditarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditarMActionPerformed(evt);
+            }
+        });
+        PnMarcas.add(BtnEditarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 580, 130, 60));
+
+        BtnEliminarM.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        BtnEliminarM.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminarM.setText("Eliminar");
+        BtnEliminarM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BtnEliminarM.setContentAreaFilled(false);
+        BtnEliminarM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEliminarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarMActionPerformed(evt);
+            }
+        });
+        PnMarcas.add(BtnEliminarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 580, 130, 60));
 
         getContentPane().add(PnMarcas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 1100, 720));
 
@@ -683,7 +760,8 @@ public class admin extends javax.swing.JFrame {
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnCerrarActionPerformed
-
+  Marca m = new Marca();
+    MostrarMarca mm = new MostrarMarca();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -886,6 +964,75 @@ PnHome.setVisible(false);
         lblSeleccion8.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_BtnEmpleadosActionPerformed
 
+    private void BtnGuardarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarMActionPerformed
+          m.setMarca(txtMarca.getText());
+       try {
+          if(editado==0){
+            mm.InsertarMarca(m);
+          MostrarDatosMarcas();
+          txtMarca.setText("");
+       }
+        else{         
+            mm.ActualizarMarca(m);
+             MostrarDatosMarcas();
+            editado = 0;
+            txtMarca.setText("");
+        }  
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        } 
+       
+    }//GEN-LAST:event_BtnGuardarMActionPerformed
+
+    void tabla(){
+        tblMarca.getColumnModel().getColumn(0).setPreferredWidth(50);
+    }
+    private void BtnEditarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarMActionPerformed
+        int fila = tblMarca.getSelectedRow();
+        String idmarca;
+        if(fila>=0){
+       idmarca = String.valueOf(tblMarca.getModel().getValueAt(tblMarca.getSelectedRow(), 0));
+       txtMarca.setText(String.valueOf(tblMarca.getModel().getValueAt(tblMarca.getSelectedRow(),1)));
+       m.setId_marca(Integer.parseInt(idmarca));
+       mm.EliminarMarca(m);
+        }
+ else{
+           JOptionPane.showMessageDialog(null,"Seleccione una fila");
+       }
+    }//GEN-LAST:event_BtnEditarMActionPerformed
+
+    private void BtnEliminarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarMActionPerformed
+        int fila = tblMarca.getSelectedRow();
+        String idmarca;
+        if(fila>=0){
+       idmarca = String.valueOf(tblMarca.getModel().getValueAt(tblMarca.getSelectedRow(), 0));
+       m.setId_marca(Integer.parseInt(idmarca));
+          mm.EliminarMarca(m);
+        }
+    }//GEN-LAST:event_BtnEliminarMActionPerformed
+ void MostrarDatosMarcas(){
+        String titulos [] = {"ID", "MARCA"};
+        DefaultTableModel df = new DefaultTableModel(null, titulos){
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false;
+    }
+};
+        m.setMarca(txtbuscarmarca.getText());
+       MostrarMarca mm = new MostrarMarca();
+        ArrayList<Marca> PS = mm.BuscarMarca(m);
+        Iterator i = PS.iterator();
+        String filas [] = new String[2];
+        while (i.hasNext()){
+        Marca m ;
+         m = (Marca)i.next();
+         filas[0] = String.valueOf(m.getId_marca());
+         filas[1] = m.getMarca();
+         df.addRow(filas);
+        }
+        tblMarca.setModel(df); 
+            tabla();
+    }
     
      void inicio(){
 PnHome.setVisible(true);
@@ -949,8 +1096,13 @@ PnHome.setVisible(true);
     private javax.swing.JButton BtnCerrar;
     private javax.swing.JButton BtnCliente;
     private javax.swing.JButton BtnCompras;
+    private javax.swing.JButton BtnDefazarM;
+    private javax.swing.JButton BtnEditarM;
+    private javax.swing.JButton BtnEliminarM;
     private javax.swing.JButton BtnEmpleados;
+    private javax.swing.JButton BtnGuardarM;
     private javax.swing.JButton BtnHome;
+    private javax.swing.JButton BtnLimpiarM;
     private javax.swing.JButton BtnMarcas;
     private javax.swing.JButton BtnReportes;
     private javax.swing.JPanel PnBarra;
@@ -967,6 +1119,8 @@ PnHome.setVisible(true);
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -989,7 +1143,6 @@ PnHome.setVisible(true);
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
@@ -1003,5 +1156,8 @@ PnHome.setVisible(true);
     private javax.swing.JLabel lblSeleccion6;
     private javax.swing.JLabel lblSeleccion7;
     private javax.swing.JLabel lblSeleccion8;
+    private javax.swing.JTable tblMarca;
+    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtbuscarmarca;
     // End of variables declaration//GEN-END:variables
 }
