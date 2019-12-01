@@ -219,7 +219,7 @@ CREATE TABLE `empleado` (
   `direccion` varchar(50) DEFAULT NULL,
   `Estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID_empleado`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +228,7 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES (1,'Alvaro Antonio valladares Borja',22,'77889966','mi casa',NULL),(2,'Leonardo Alexis Ramirez Perez',20,'123456789','su casa',NULL);
+INSERT INTO `empleado` VALUES (1,'Alvaro Antonio valladares Borja',22,'77889966','mi casa',NULL),(2,'Leonardo Alexis Ramirez Perez',20,'123456789','su casa',NULL),(3,'Mauricio Ismael Menjivar Tobias',20,'78945612','su casa',1);
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -244,7 +244,7 @@ CREATE TABLE `marca` (
   `marca` varchar(50) DEFAULT NULL,
   `Estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id_marca`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -454,6 +454,26 @@ SET character_set_client = @saved_cs_client;
 --
 -- Dumping routines for database 'comercial'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `SP_AEmpleado` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`Alvaro`@`localhost` PROCEDURE `SP_AEmpleado`(id int,emple varchar(50),ed int,tele varchar(50),direc varchar(50))
+BEGIN
+UPDATE empleado SET Empleado =emp,edad = ed,telefono = tele,direccion = direc
+WHERE Id_empleado = id; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `SP_AMarca` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -464,7 +484,7 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`CURRENT`@`%` PROCEDURE `SP_AMarca`(id int,mar varchar(50),es int)
+CREATE DEFINER=`Alvaro`@`localhost` PROCEDURE `SP_AMarca`(id int,mar varchar(50),es int)
 BEGIN
 UPDATE marca SET marca =mar, Estado= es
 WHERE Id_marca = id; 
@@ -506,6 +526,25 @@ DELIMITER ;;
 CREATE DEFINER=`Alvaro`@`localhost` PROCEDURE `SP_BMarca`(marc varchar(50))
 BEGIN
 select * from marca where marca like  CONCAT(marc,'%') and estado = 1; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SP_EEmpleado` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`Alvaro`@`localhost` PROCEDURE `SP_EEmpleado`(id int)
+BEGIN
+DELETE FROM Empleado WHERE Id_empleado = id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -733,9 +772,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`Alvaro`@`localhost` PROCEDURE `SP_MEmpleado`()
+CREATE DEFINER=`Alvaro`@`localhost` PROCEDURE `SP_MEmpleado`(nomb varchar(50))
 BEGIN
-select * from Empleado;
+select * from Empleado where empleado like  CONCAT(nomb,'%'); 
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -826,4 +865,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-01 11:34:58
+-- Dump completed on 2019-12-01 15:46:56
